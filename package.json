@@ -1,0 +1,84 @@
+{
+  "name": "ai-prompt-cache",
+  "version": "1.0.0",
+  "description": "Production-ready LLM response caching for OpenAI and extensible providers. Reduce API costs, latency, and duplicate requests.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "prepare": "husky",
+    "prepublishOnly": "pnpm run build"
+  },
+  "keywords": [
+    "ai",
+    "llm",
+    "cache",
+    "openai",
+    "prompt-cache",
+    "redis",
+    "typescript",
+    "sdk",
+    "anthropic",
+    "gemini",
+    "cost-optimization"
+  ],
+  "author": "Majid Ali Mughal",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/majidalimughal/ai-prompt-cache.git"
+  },
+  "homepage": "https://github.com/majidalimughal/ai-prompt-cache#readme",
+  "bugs": {
+    "url": "https://github.com/majidalimughal/ai-prompt-cache/issues"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "peerDependencies": {
+    "ioredis": ">=5.0.0",
+    "openai": ">=4.0.0"
+  },
+  "peerDependenciesMeta": {
+    "ioredis": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.28.0",
+    "@types/node": "^22.15.21",
+    "@vitest/coverage-v8": "^3.1.4",
+    "eslint": "^9.28.0",
+    "eslint-config-prettier": "^10.1.5",
+    "husky": "^9.1.7",
+    "ioredis": "^5.6.1",
+    "lint-staged": "^16.1.0",
+    "openai": "^4.104.0",
+    "prettier": "^3.5.3",
+    "tsup": "^8.5.0",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.33.0",
+    "vitest": "^3.1.4"
+  }
+}
